@@ -1,75 +1,71 @@
 /* الصفحة الرئيسية */
- body {
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     text-align: center;
     background: linear-gradient(to right,rgb(20, 7, 8),transparent),url('94b66ceeebcdbc451a3f138650e1c71d.jpg');
-    height: 100vh;
-      display: flex; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-      justify-content: center;
-    align-items: center;  
-} 
+    align-items: center;
+}
+
 *{
     font-family: sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-img{
-    width: 100px;
-    translate: -50px -290px;
-}
-ul{
+
+header {
     display: flex;
-    justify-content: space-around;
-    translate: 0 -280px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
 }
-.video{
-    position: relative;
-    left: 1100px;
-}
-.house{
-    position: relative;
-    left: 800px;
-}
-.characters{
-    position: relative;
-    left: 600px;
-}
-.home{
-    position: relative;
-    left: 350px;
-}
-li{
-    translate: 0 -70px;
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     list-style-type: none;
+    flex-wrap: wrap;
 }
-a{
+
+li {
+    list-style: none;
+}
+
+a {
     text-decoration: none;
     color: rgb(210, 173, 6);
+    font-weight: bold;
 }
-a:hover{
+
+a:hover {
     color: white;
     text-decoration: underline;
-} 
+}
 
 .container {
-    position: relative;
-    right: 140px;
-   top: 30px;
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     color: white;
-    width: 80%;
+    width: 90%;
+    max-width: 900px;
+    margin-top: 20px;
 }
 
 .movies-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
@@ -97,7 +93,7 @@ button:hover {
 
 /* صفحة الفيديو */
 .movie-bg {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,21 +101,13 @@ button:hover {
     text-align: center;
 }
 
-/* خلفيات الأفلام */
-.philosopher-bg { background: url('MV008559_LTT111330764.webp') no-repeat center center/cover; }
-.chamber-bg { background: url('Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg') no-repeat center center/cover; }
-.prisoner-bg { background: url('harry-potter-and-the-prisoner-of-azkaban-1677198758683.jpg') no-repeat center center/cover; }
-.goblet-bg { background: url('GoFposter.jpg') no-repeat center center/cover; }
-.order-bg { background: url('images\ \(2\).jpeg') no-repeat center center/cover; }
-.prince-bg { background: url('Hpteaserposter.jpg') no-repeat center center/cover; }
-.hallows1-bg { background: url('sddefault.jpg') no-repeat center center/cover; }
-.hallows2-bg { background: url('hq720.jpg') no-repeat center center/cover; }
-
 .video-container {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     color: white;
+    width: 90%;
+    max-width: 800px;
 }
 
 .back-btn {
@@ -136,18 +124,16 @@ button:hover {
 
 .back-btn:hover {
     background-color: darkred;
-} 
+}
+
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     background-color: #1a1a1a;
     color: #fff;
     text-align: center;
     padding: 15px 0;
     font-family: 'Arial', sans-serif;
-    margin-top: auto; /* يجعل الفوتر ثابت في الأسفل */
+    margin-top: auto;
 }
 
 footer nav a {
@@ -158,4 +144,25 @@ footer nav a {
 
 footer nav a:hover {
     text-decoration: underline;
+}
+
+/* تحسين التصميم للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .movies-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        width: 95%;
+    }
+    .video-container {
+        width: 95%;
+    }
 }

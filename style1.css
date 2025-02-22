@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: linear-gradient(to right,rgb(26, 23, 23),transparent),url(1200px-Hogwarts_model_studio_tour.jpg);
+     background-image: linear-gradient(to right,#1a1717,transparent),  url(1200px-Hogwarts_model_studio_tour.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
