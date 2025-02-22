@@ -1,99 +1,91 @@
+/* تحسينات التصميم وجعل الموقع متجاوبًا */
 *{
     font-family: sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-img{
-    width: 100px;
-}
+
 body{
-    height: 100vh;
     background-image: linear-gradient(to right,rgb(26, 23, 23),transparent),url(1200px-Hogwarts_model_studio_tour.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 100px;
+}
+
 ul{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
 }
-li{
-    translate: 0 -70px;
-    list-style-type: none;
-}
+
 a{
     text-decoration: none;
     color: rgb(210, 173, 6);
+    font-weight: bold;
 }
+
 a:hover{
     color: white;
     text-decoration: underline;
 }
+
 .head{
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bolder;
-    translate: 50px 0;
+    text-align: center;
+    margin-top: 50px;
     color: rgb(21, 147, 225);
 }
+
 p{
-    color: rgb(21, 147, 225) ;
-    translate: 50px 0;
-    width: 170px;
-}
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;
-    color: #fff;
+    max-width: 600px;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    font-family: 'Arial', sans-serif;
+    margin: 10px auto;
+    color: rgb(21, 147, 225);
 }
 
-footer nav a {
-    color: #ffcc00;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer nav a:hover {
-    text-decoration: underline;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1; /* يجعل المحتوى يتمدد ليملأ المساحة */
-}
-
-footer {
-    background-color: #1a1a1a;
-    color: #fff;
+footer{
     text-align: center;
-    padding: 15px 0;
-    font-family: 'Arial', sans-serif;
-    margin-top: auto; /* يجعل الفوتر ثابت في الأسفل */
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin-top: auto;
 }
 
-footer nav a {
-    color: #ffcc00;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer nav a:hover {
-    text-decoration: underline;
+/* تحسين التصميم للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .head {
+        font-size: 1.8rem;
+    }
+    p {
+        width: 90%;
+    }
 }
